@@ -10,7 +10,6 @@ exports.fetchNumbers = async (req, res) => {
         return res.status(400).json({ error: "Invalid number type." });
     }
 
-    // Fetch numbers from API
     const numbers = await getNumbersFromAPI(type);
     if (!numbers) return res.status(500).json({ error: "Failed to fetch numbers." });
 
